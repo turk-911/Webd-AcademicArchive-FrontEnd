@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./ReviewSubmissions.css";
-import DaylightCanvas from "../../Canvas/DayLightCanvas";
 interface Assignment {
   id: number;
   title: string;
@@ -36,8 +35,6 @@ const AssignmentReview: React.FC = () => {
   }, []);
 
   return (
-    <div className="review-portal">
-      <DaylightCanvas />
       <div className="assignment-review">
         <h2>Review the Aliens here 👽 </h2>
         <table>
@@ -67,7 +64,7 @@ const AssignmentReview: React.FC = () => {
           </tbody>
         </table>
       </div>
-    </div>
+
   );
 };
 export default AssignmentReview;

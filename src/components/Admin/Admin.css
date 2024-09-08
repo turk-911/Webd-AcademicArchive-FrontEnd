@@ -1,23 +1,45 @@
-.admin-portal {
+.auth-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  z-index: 1; 
+  overflow: hidden;
+}
+.admin-portal {
+  z-index: 10; 
   padding: 20px;
   font-family: Arial, sans-serif;
+  margin-top: 50px;
+  width: 70%;
+}
+.light {
+  color: black;
+  background-color: #fff;
+}
+.dark {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .admin-header {
-  background: rgba(255, 255, 255, 0.9); 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  padding: 10px;
 }
 .admin-header h1 {
   margin: 0;
 }
 .admin-header nav {
   display: flex;
+}
+.admin-header .toggle-btn {
+  font-size: 30px;
+
 }
 .admin-header button {
   background: #007bff;
@@ -32,8 +54,7 @@
   background: #0056b3;
 }
 .admin-content {
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.8);
+  padding: 20px; 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

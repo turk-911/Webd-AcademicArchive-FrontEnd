@@ -14,20 +14,22 @@ const UploadAssignments: React.FC = () => {
   };
   return (
     <div className="upload-assignments">
-      <h2>Add new Comet ☄️</h2>
-      <input
-        type="text"
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <textarea
-        placeholder="Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleSubmit}>Upload Assignment</button>
+      <div className="inner-div">
+        <h2>Add new Comet ☄️</h2>
+        <input
+          type="text"
+          placeholder="Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <textarea
+          placeholder="Description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+        <input type="file" onChange={handleFileChange} />
+        <button onClick={handleSubmit}>Launch Comet ☄️</button>
+      </div>
     </div>
   );
 };

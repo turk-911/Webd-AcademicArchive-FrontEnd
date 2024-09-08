@@ -1,40 +1,13 @@
-.admin-portal {
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
-.admin-header {
-  background: rgba(255, 255, 255, 0.9); 
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.upload-assignments {
+  text-align: center;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  width: 100%;
 }
-.admin-header h1 {
-  margin: 0;
-}
-.admin-header nav {
-  display: flex;
-}
-.admin-header button {
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-.admin-header button:hover {
-  background: #0056b3;
-}
-.admin-content {
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.8); 
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.upload-assignments .inner-div {
+  width: 60%;
 }
 .upload-assignments input, .upload-assignments textarea {
   display: block;

@@ -31,13 +31,6 @@
 .header-button:hover {
   background-color: #0056b3;
 }
-.content {
-  text-align: center;
-  color: white;
-  position: relative;
-  z-index: 1;
-  margin-top: 150px;
-}
 .auth-wrapper canvas {
   position: absolute;
   top: 0;

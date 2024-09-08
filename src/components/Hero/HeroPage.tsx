@@ -3,7 +3,7 @@ import SpaceCanvas from "../Canvas/SpaceCanvas";
 import Header from "../Header/Header";
 import { useNavigate } from "react-router-dom";
 import "./HeroPage.css";
-import "./Features.css";
+
 import Slider from "../Slider/Slider";
 const HeroPage: React.FC = () => {
   const navigate = useNavigate();
