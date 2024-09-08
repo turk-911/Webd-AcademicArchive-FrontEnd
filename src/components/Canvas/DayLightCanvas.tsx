@@ -1,11 +1,14 @@
 import React, { useRef, useEffect } from "react";
-import "./DaylightCanvas.css";
-const DaylightCanvas: React.FC = () => {
+import "./DayLightCanvas.css";
+const DayLightCanvas: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const draw = (ctx: CanvasRenderingContext2D) => {
-    const gradient = ctx.createLinearGradient( 0, 0, 0, canvasRef.current!.height);
-    gradient.addColorStop(0, "#87CEEB");
-    gradient.addColorStop(1, "#f0f8ff");
+    const gradient = ctx.createLinearGradient(0, 0, 0, canvasRef.current!.height);
+    gradient.addColorStop(0, "#87CEEB"); 
+    gradient.addColorStop(0.3, "#FFDDC1");
+    gradient.addColorStop(0.5, "#FFEB99"); 
+    gradient.addColorStop(0.7, "#FFFACD"); 
+    gradient.addColorStop(1, "#FFFFFF"); 
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvasRef.current!.width, canvasRef.current!.height);
   };
@@ -17,7 +20,7 @@ const DaylightCanvas: React.FC = () => {
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      draw(ctx); 
+      draw(ctx);
     };
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
@@ -25,6 +28,7 @@ const DaylightCanvas: React.FC = () => {
       window.removeEventListener("resize", resizeCanvas);
     };
   }, []);
-  return <canvas ref={canvasRef} className="daylight-canvas"></canvas>;
+  return <canvas ref={canvasRef} className="sunrise-canvas"></canvas>;
 };
-export default DaylightCanvas;
+
+export default DayLightCanvas;

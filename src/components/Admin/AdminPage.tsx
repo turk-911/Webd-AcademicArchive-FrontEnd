@@ -3,7 +3,7 @@ import UploadAssignments from "./AddNewAssignment/AddNewAssignment";
 import AssignmentReview from "./ReviewSubmissions/ReviewSubmissions"; 
 import "./Admin.css";
 import DaylightCanvas from "../Canvas/DayLightCanvas";
-import AdminCanvas from "../Canvas/AdminCanvas"
+import SpaceCanvas from "../Canvas/SpaceCanvas";
 const AdminPortal: React.FC = () => {
   const [light, setLight] = useState<boolean>(false);
   const [currentView, setCurrentView] = useState<"upload" | "review">("upload");
@@ -13,9 +13,9 @@ const AdminPortal: React.FC = () => {
   return (
     <div className="auth-wrapper">
       {light && <DaylightCanvas />}
-      {!light && <AdminCanvas />}
-      <div className={`admin-portal ${light ? "light" : "dark"}`}>
-        <header className={`admin-header ${light ? "light" : "dark"}`}>
+      {!light && <SpaceCanvas />}
+      <div className="admin-portal">
+        <header className={`admin-header ${light ? "light" : "dark-header"}`}>
           <h1>Palace of Cosmic Guardians 🧑‍🚀</h1>
           <nav>
             <button className="toggle-btn" onClick={() => setLight(!light)}>
@@ -30,7 +30,7 @@ const AdminPortal: React.FC = () => {
             </button>
           </nav>
         </header>
-        <main className={`admin-content ${light ? "light" : "dark"}`}>
+        <main className={`admin-content ${light ? "light-main" : "dark-main"}`}>
           {currentView === "upload" && <UploadAssignments />}
           {currentView === "review" && <AssignmentReview />}
         </main>

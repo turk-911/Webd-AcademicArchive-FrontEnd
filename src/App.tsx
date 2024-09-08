@@ -8,25 +8,25 @@ import SignupPage from "./components/Authentication/SignupPage";
 import LoginPage from "./components/Authentication/LoginPage";
 import "./App.css";
 import HeroPage from "./components/Hero/HeroPage";
-import AddNewAssignment from "./components/Admin/AddNewAssignment/AddNewAssignment";
-import DaylightCanvas from "./components/Canvas/DayLightCanvas";
-import ReviewSubmissions from "./components/Admin/ReviewSubmissions";
 import AdminPortal from "./components/Admin/AdminPage";
-import SpaceCanvas from "./components/Canvas/SpaceCanvas";
+import StudentExport from "./components/Student/StudentExport";
+import StudentPortal from "./components/Student/StudentPortal";
+import { ThemeProvider } from "./components/Student/Theme Context/ThemeContext";
 const App: React.FC = () => {
   return (
-    // <Router>
-    //   <Routes>
-    //     <Route path="/" element={<HeroPage />} />
-    //     <Route path="/login" element={<LoginPage />} />
-    //     <Route path="/signup" element={<SignupPage />} />
-    //   </Routes>
-    // </Router>
-
-      // <SpaceCanvas />
-      <AdminPortal />
-    
-    // <DaylightCanvas />
+    <Router>
+      <Routes>
+        <Route path="/" element={<HeroPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/admin" element={<AdminPortal />} />
+        <Route path="/student/*" element={
+          <ThemeProvider>
+            <StudentPortal />
+          </ThemeProvider>
+        } />
+      </Routes>
+    </Router>
   );
 };
 

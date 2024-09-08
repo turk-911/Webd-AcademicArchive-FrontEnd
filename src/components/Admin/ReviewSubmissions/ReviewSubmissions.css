@@ -3,18 +3,24 @@
 }
 .assignment-review {
   max-width: 1000px;
+  width: 100%;
   margin: 20px auto;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   font-family: Arial, sans-serif;
 }
 .assignment-review h2 {
   margin-bottom: 20px;
 }
 .assignment-review table {
-  width: 100%;
   border-collapse: collapse;
+}
+.table-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 .assignment-review th,
 .assignment-review td {
@@ -34,8 +40,8 @@
   background-color: #0056b3;
 }
 @media (max-width: 768px) {
-  .assignment-review {
-    padding: 15px;
+  .table-div {
+    width: 100%;
   }
   .assignment-review table {
     font-size: 14px;

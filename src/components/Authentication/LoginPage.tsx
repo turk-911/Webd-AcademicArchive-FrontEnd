@@ -1,9 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import SpaceCanvas from "../Canvas/SpaceCanvas";
 import "./Auth.css";
 
 const LoginPage: React.FC = () => {
+  const [login, setLogin] = useState('');
+  const navigate = useNavigate();
+  function handleClick() {
+    if(login === 'admin@gmail.com') navigate('/admin');
+    else navigate('/student');
+  }
   return (
     <div className="auth-wrapper">
       <SpaceCanvas />
@@ -12,7 +18,13 @@ const LoginPage: React.FC = () => {
           <h1 className="auth-title">Login</h1>
           <form>
             <div className="input-container">
-              <input type="email" placeholder="Enter your email" required />
+              <input
+                type="text"
+                placeholder="Enter your email"
+                value={login}
+                required
+                onChange={(e) => setLogin(e.target.value)}
+              />
             </div>
             <div className="input-container">
               <input
@@ -21,7 +33,7 @@ const LoginPage: React.FC = () => {
                 required
               />
             </div>
-            <button type="submit" className="auth-button">
+            <button type="submit" className="auth-button" onClick={handleClick}>
               Login 🚀
             </button>
           </form>

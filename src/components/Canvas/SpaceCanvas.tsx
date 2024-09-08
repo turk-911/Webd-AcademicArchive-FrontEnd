@@ -3,7 +3,7 @@ const SpaceCanvas: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (canvas === null) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
     canvas.width = window.innerWidth;

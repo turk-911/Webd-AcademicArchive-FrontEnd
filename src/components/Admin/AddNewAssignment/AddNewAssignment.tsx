@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./AddNewAssignment.css";
-const UploadAssignments: React.FC = () => {
+const AddNewAssignment: React.FC = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [file, setFile] = useState<File | null>(null);
@@ -18,12 +18,12 @@ const UploadAssignments: React.FC = () => {
         <h2>Add new Comet ☄️</h2>
         <input
           type="text"
-          placeholder="Title"
+          placeholder="Assignment Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <textarea
-          placeholder="Description"
+          placeholder="Assignment Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
@@ -33,4 +33,4 @@ const UploadAssignments: React.FC = () => {
     </div>
   );
 };
-export default UploadAssignments;
+export default AddNewAssignment;
