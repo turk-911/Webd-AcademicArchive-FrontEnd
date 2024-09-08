@@ -31,7 +31,6 @@ const AssignmentUpload: React.FC = () => {
       setFile(null);
     }
   };
-
   return (
     <div className="assignment-upload-card">
       <h2>Upload Assignment</h2>

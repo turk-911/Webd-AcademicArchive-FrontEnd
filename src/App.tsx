@@ -9,9 +9,7 @@ import LoginPage from "./components/Authentication/LoginPage";
 import "./App.css";
 import HeroPage from "./components/Hero/HeroPage";
 import AdminPortal from "./components/Admin/AdminPage";
-import StudentExport from "./components/Student/StudentExport";
 import StudentPortal from "./components/Student/StudentPortal";
-import { ThemeProvider } from "./components/Student/Theme Context/ThemeContext";
 const App: React.FC = () => {
   return (
     <Router>
@@ -20,14 +18,13 @@ const App: React.FC = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/admin" element={<AdminPortal />} />
-        <Route path="/student/*" element={
-          <ThemeProvider>
-            <StudentPortal />
-          </ThemeProvider>
-        } />
+        <Route path="/student/*" element={<StudentPortal />} />
+        
       </Routes>
     </Router>
+    // <StudentPortal />
   );
+
 };
 
 export default App;

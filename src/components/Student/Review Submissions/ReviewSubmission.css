@@ -9,6 +9,13 @@
   text-align: center;
   border: 1px solid #ddd;
 }
+.top-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
 .checked-submission-card .light-heading {
   font-size: 22px;
   margin-bottom: 10px;
