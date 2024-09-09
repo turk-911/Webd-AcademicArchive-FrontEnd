@@ -14,7 +14,6 @@ For the night owls, it contains a starry background, and for the early risers, i
 - [Screenshots](#screenshots)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
 - [Technologies](#technologies)
 
 ## Features
@@ -43,7 +42,7 @@ For the cosmic guardians:
 
 ![1725876689277](image/README/1725876689277.png)
 
-**Admin Portal(Dark theme):**
+**Admin Portal(Space theme):**
 
 ![1725876709179](image/README/1725876709179.png)
 
