@@ -1,5 +1,6 @@
 import React from "react";
 import "./ReviewSubmission.css";
+import { useTheme } from "../Context/ThemeContext";
 interface CheckedSubmissionCardProps {
   title: string;
   subject: string;
@@ -14,21 +15,21 @@ const ReviewSubmissionCard: React.FC<CheckedSubmissionCardProps> = ({
   isChecked,
   darkMode,
 }) => {
+  const { isDarkMode } = useTheme();
   return (
     <div>
-      <div className={`checked-submission-card ${darkMode ? "dark": ""}`}>
-      <h3 className={`${darkMode ? "dark-heading": "light-heading"}`}>{title}</h3>
-      <p className={`${darkMode ? "dark-p": "light-p"}`}>
-        <strong>Subject:</strong> {subject}
-      </p>
-      <p className={`${darkMode ? "dark-p": "light-p"}`}>
-        <strong>Submission Date:</strong> {submissionDate}
-      </p>
-      <div className={`status ${isChecked ? "checked" : "unchecked"}`}>
-        {isChecked ? "Checked ✔️" : "Unchecked ❌"}
+      <div className={`checked-submission-card ${darkMode ? "dark" : ""}`}>
+        <h3 className={`${isDarkMode ? "dark-h" : "light-h"}`}>{title}</h3>
+        <p className={`${darkMode ? "dark-p" : "light-p"}`}>
+          <strong>Subject:</strong> {subject}
+        </p>
+        <p className={`${darkMode ? "dark-p" : "light-p"}`}>
+          <strong>Submission Date:</strong> {submissionDate}
+        </p>
+        <div className={`status ${isChecked ? "checked" : "unchecked"}`}>
+          {isChecked ? "Checked ✔️" : "Unchecked ❌"}
+        </div>
       </div>
-    </div>
-    
     </div>
   );
 };

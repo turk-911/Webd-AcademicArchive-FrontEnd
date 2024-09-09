@@ -14,21 +14,24 @@ import AssignmentUpload from "./components/Student/Assignment Upload/AssignmentU
 import ReviewsSubmission from "./components/Student/Review Submissions/ReviewSubmission";
 import CategoryPapers from "./components/Student/Category Papers/CategoryPapers";
 import ViewAllPapers from "./components/Student/View All Papers/ViewAllPapers";
+import { ThemeProvider } from "./components/Student/Context/ThemeContext";
 const App: React.FC = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HeroPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/admin" element={<AdminPortal />} />
-        <Route path="/student" element={<StudentPortal />} />
-        <Route path="/upload" element={<AssignmentUpload />} />
-        <Route path="/review" element={<ReviewsSubmission />} />
-        <Route path="/category" element={<CategoryPapers/>} />
-        <Route path="/view" element={<ViewAllPapers />} />
-      </Routes>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HeroPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/admin" element={<AdminPortal />} />
+          <Route path="/student" element={<StudentPortal />} />
+          <Route path="/upload" element={<AssignmentUpload />} />
+          <Route path="/review" element={<ReviewsSubmission />} />
+          <Route path="/category" element={<CategoryPapers />} />
+          <Route path="/view" element={<ViewAllPapers />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
     // <StudentPortal />
   );
 

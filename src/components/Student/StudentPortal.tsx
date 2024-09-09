@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import AssignmentUpload from "./Assignment Upload/AssignmentUpload";
 import ReviewSubmissions from "./Review Submissions/ReviewSubmission";
 import CategoryPapers from "./Category Papers/CategoryPapers";
@@ -8,8 +8,9 @@ import DaylightCanvas from "../Canvas/DayLightCanvas";
 import "./Student.css";
 import PendingAssignmentCard from "./Pending Assignment/PendingAssignment";
 import { Link } from "react-router-dom";
+import { useTheme } from "./Context/ThemeContext";
 const StudentPortal: React.FC = () => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+  const {isDarkMode, toggleTheme} = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [upload, setUpload] = useState(false);
@@ -67,7 +68,7 @@ const StudentPortal: React.FC = () => {
           </nav>
           <button
             className="theme-toggle"
-            onClick={() => setIsDarkMode(!isDarkMode)}
+            onClick={toggleTheme}
           >
             {isDarkMode ? "🌞" : "🌝"}
           </button>

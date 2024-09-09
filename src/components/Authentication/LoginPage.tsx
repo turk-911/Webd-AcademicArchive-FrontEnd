@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SpaceCanvas from "../Canvas/SpaceCanvas";
 import "./Auth.css";
-
 const LoginPage: React.FC = () => {
   const [login, setLogin] = useState('');
   const navigate = useNavigate();

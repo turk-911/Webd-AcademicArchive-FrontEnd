@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./AssignmentUpload.css";
 import SpaceCanvas from "../../Canvas/SpaceCanvas";
+import { useTheme } from "../Context/ThemeContext";
+import DayLightCanvas from "../../Canvas/DayLightCanvas";
 interface Assignment {
   id: number;
   title: string;
@@ -8,6 +10,7 @@ interface Assignment {
   fileName: string;
 }
 const AssignmentUpload: React.FC = () => {
+  const { isDarkMode } = useTheme();
   const [title, setTitle] = useState("");
   const [subject, setSubject] = useState("");
   const [file, setFile] = useState<File | null>(null);
@@ -34,9 +37,9 @@ const AssignmentUpload: React.FC = () => {
   };
   return (
     <div className="auth-wrapper">
-      <SpaceCanvas />
+      { isDarkMode ? <SpaceCanvas />: <DayLightCanvas /> }
       <div className="assignment-upload-card">
-        <h2>Upload Assignment</h2>
+        <h2 className={`${isDarkMode ? "dark-h": "light-h"}`}>Upload Assignment</h2>
         <form onSubmit={handleSubmit} className="upload-form">
           <input
             type="text"
@@ -55,7 +58,7 @@ const AssignmentUpload: React.FC = () => {
           <input type="file" onChange={handleFileChange} required />
           <button type="submit">Upload</button>
         </form>
-        <h3>Recent Uploads</h3>
+        <h3 className={`${isDarkMode ? "dark-h": "light-h"}`}>Recent Uploads</h3>
         <ul className="recent-uploads">
           {recentUploads.map((upload) => (
             <li key={upload.id} className="upload-item">

@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import './ReviewSubmission.css'
 import ReviewSubmissionCard from "./ReviewSubmissionCard";
 import SpaceCanvas from "../../Canvas/SpaceCanvas";
+import { useTheme } from "../Context/ThemeContext";
+import DayLightCanvas from "../../Canvas/DayLightCanvas";
 const ReviewsSubmission: React.FC = () => {
-    const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+    const { isDarkMode } = useTheme();
     return (
       <div className="div-wrapper">
-        <SpaceCanvas />
+        { isDarkMode ? <SpaceCanvas />: <DayLightCanvas />}
         <div className="top-div">
-          <h2>Review submissions</h2>
+          <h2 className={`${isDarkMode ? "dark-h": "light-h"}`}>Review submissions</h2>
           <div className="something">
             <ReviewSubmissionCard
               title="Assignment 1"
