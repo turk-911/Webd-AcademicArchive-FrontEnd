@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./AssignmentUpload.css";
+import SpaceCanvas from "../../Canvas/SpaceCanvas";
 interface Assignment {
   id: number;
   title: string;
@@ -32,35 +33,38 @@ const AssignmentUpload: React.FC = () => {
     }
   };
   return (
-    <div className="assignment-upload-card">
-      <h2>Upload Assignment</h2>
-      <form onSubmit={handleSubmit} className="upload-form">
-        <input
-          type="text"
-          placeholder="Assignment Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Subject Name"
-          value={subject}
-          onChange={(e) => setSubject(e.target.value)}
-          required
-        />
-        <input type="file" onChange={handleFileChange} required />
-        <button type="submit">Upload</button>
-      </form>
-      <h3>Recent Uploads</h3>
-      <ul className="recent-uploads">
-        {recentUploads.map((upload) => (
-          <li key={upload.id} className="upload-item">
-            <strong>{upload.title}</strong> - {upload.subject} -{" "}
-            {upload.fileName}
-          </li>
-        ))}
-      </ul>
+    <div className="auth-wrapper">
+      <SpaceCanvas />
+      <div className="assignment-upload-card">
+        <h2>Upload Assignment</h2>
+        <form onSubmit={handleSubmit} className="upload-form">
+          <input
+            type="text"
+            placeholder="Assignment Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Subject Name"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+            required
+          />
+          <input type="file" onChange={handleFileChange} required />
+          <button type="submit">Upload</button>
+        </form>
+        <h3>Recent Uploads</h3>
+        <ul className="recent-uploads">
+          {recentUploads.map((upload) => (
+            <li key={upload.id} className="upload-item">
+              <strong>{upload.title}</strong> - {upload.subject} -{" "}
+              {upload.fileName}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

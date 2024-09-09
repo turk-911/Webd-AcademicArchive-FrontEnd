@@ -10,6 +10,15 @@
   margin: 0 auto;
 
 }
+nav .dark-span {
+  color: white;
+}
+nav button {
+  background: transparent;
+  border: none;
+  /* color: white; */
+  font-size: 18px;
+}
 .dark-h {
   color: white;
 }

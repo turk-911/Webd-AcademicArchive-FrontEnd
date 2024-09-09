@@ -7,8 +7,9 @@ import SpaceCanvas from "../Canvas/AdminCanvas";
 import DaylightCanvas from "../Canvas/DayLightCanvas";
 import "./Student.css";
 import PendingAssignmentCard from "./Pending Assignment/PendingAssignment";
+import { Link } from "react-router-dom";
 const StudentPortal: React.FC = () => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [upload, setUpload] = useState(false);
@@ -36,24 +37,32 @@ const StudentPortal: React.FC = () => {
           </button>
           <nav className={menuOpen ? "nav-open" : "nav-closed"}>
             <button className={`${isDarkMode ? 'dark-span': "light-span"}`} onClick={() => {setMenuOpen(false); setUpload(true); setReview(false); setCategory(false); setView(false);}} >
-              Upload Comets
+              <Link to='/upload'>
+                Upload Comets
+              </Link>
             </button>
             <button className={`${isDarkMode ? 'dark-span': "light-span"}`} onClick={() => {setMenuOpen(false); setUpload(false); setReview(true); setCategory(false); setView(false);}}>
-              Review Submissions
+              <Link to='/review'>
+                Review Submissions
+              </Link>
             </button>
             <button className={`${isDarkMode ? 'dark-span': "light-span"}`} onClick={() => {setMenuOpen(false); 
             setUpload(false);
             setReview(false);
             setCategory(true);
             setView(false);}}>
-              Category-wise Papers
+              <Link to='/category'>
+                Category-wise Papers
+              </Link>
             </button>
             <button className={`${isDarkMode ? 'dark-span': "light-span"}`} onClick={() => {setMenuOpen(false);
             setUpload(false);
             setReview(false);
             setCategory(false);
             setView(true);}}>
-              View All Papers
+              <Link to='/view'>
+                View all Papers
+              </Link>
             </button>
           </nav>
           <button
@@ -103,10 +112,7 @@ const StudentPortal: React.FC = () => {
           />
         </div>
         <main>
-          {upload && <AssignmentUpload />}
-          {review && <ReviewSubmissions /> }
-          {category && <CategoryPapers />}
-          {view && <ViewAllPapers />}
+          
         </main>
       </div>
     </div>

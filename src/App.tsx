@@ -10,6 +10,10 @@ import "./App.css";
 import HeroPage from "./components/Hero/HeroPage";
 import AdminPortal from "./components/Admin/AdminPage";
 import StudentPortal from "./components/Student/StudentPortal";
+import AssignmentUpload from "./components/Student/Assignment Upload/AssignmentUpload";
+import ReviewsSubmission from "./components/Student/Review Submissions/ReviewSubmission";
+import CategoryPapers from "./components/Student/Category Papers/CategoryPapers";
+import ViewAllPapers from "./components/Student/View All Papers/ViewAllPapers";
 const App: React.FC = () => {
   return (
     <Router>
@@ -18,8 +22,11 @@ const App: React.FC = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/admin" element={<AdminPortal />} />
-        <Route path="/student/*" element={<StudentPortal />} />
-        
+        <Route path="/student" element={<StudentPortal />} />
+        <Route path="/upload" element={<AssignmentUpload />} />
+        <Route path="/review" element={<ReviewsSubmission />} />
+        <Route path="/category" element={<CategoryPapers/>} />
+        <Route path="/view" element={<ViewAllPapers />} />
       </Routes>
     </Router>
     // <StudentPortal />

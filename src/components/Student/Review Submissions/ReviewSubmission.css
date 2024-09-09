@@ -9,15 +9,23 @@
   text-align: center;
   border: 1px solid #ddd;
 }
+.div-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;;
+}
 .top-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0;
+  /* background-color: #333; */
 }
 .checked-submission-card .light-heading {
-  font-size: 22px;
+  font-size: 25px;
   margin-bottom: 10px;
   color: #333;
 }
@@ -79,6 +87,8 @@
 h2 {
   text-align: center;
   padding: 12px;
+  font-size: 30px;
+  margin-bottom: 12px;
 }
 .something {
   display: flex;
