@@ -81,3 +81,6 @@ For the cosmic guardians:
 ## Technologies
 
 It has been constructed with the use of React.js, Typescript, Vite and react router dom.
+
+## Live site at:
+https://prep-archives.netlify.app/
